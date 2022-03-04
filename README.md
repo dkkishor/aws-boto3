@@ -24,6 +24,5 @@ I chose **#2** because I can access this instance from anywhere and not tied to 
 SSH to EC2 instance
 ```ssh -i "aws-boto3.pem" ec2-user@<Public IPv4 DNS Address of EC2 Instance>```
 
-Install "boto3" in EC2 using this link
-https://pypi.org/project/boto3/
-
+Install "boto3" in EC2 using the steps mentioned in 
+[Python Package Index for boto3](https://pypi.org/project/boto3/)
