@@ -25,8 +25,10 @@ I chose **#2** because I can access this instance from anywhere and not tied to 
 
 1. SSH to EC2 instance
 ```ssh -i "aws-boto3.pem" ec2-user@<Public IPv4 DNS Address of EC2 Instance>```
+(-i : identity_file)
 2. Create a new virtual environment for your project
 ```python3 -m venv aws-boto3```
+(-m : allows you to run a script with a module name rather than a path)
 3. Go into the new virtual environment you created
 ```cd aws-boto3```
 4. Activate the virtual environment
@@ -35,6 +37,20 @@ I chose **#2** because I can access this instance from anywhere and not tied to 
 ```pip install boto3```
 
 #### Congrtulations! You are ready with your new environment.
+
+We will utilize all of the aws services from the [aws boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/index.html)
+
+The python code utilizing boto3 to connect to AWS follows the below pattern to post and/or retrieve information from the AWS service.
+```
+import boto3
+
+def fn(client):
+   print (json.dumps (client.<AWS_API>(), indent=1))
+
+if __name__ == "__main__":
+   client = boto3.client("<AWS_SERVICE>", region_name="<AWS_REGION>")
+   fn(client)
+```
 
 #### Let The Fun Begin!
 
